@@ -9,7 +9,7 @@ void showArr(vector<int> &arr) {
 }
 
 void merge(vector<int> &arr, int  l, int mid, int r) {
-	
+
 	vector<int> arrHelper(r - l + 1);
 	int i = l;
 	int j = mid + 1;
@@ -27,11 +27,12 @@ void merge(vector<int> &arr, int  l, int mid, int r) {
 void sortProcession(vector<int> &arr, int l, int r) {
 	if (r <= l)
 		return;
-	int mid = l + ((r - l) >> 1); // 括号不能省去 */ > +- > >>
+
+	int mid = l + ((r - l) >> 1); // 括号不能省去 */ > +- > >>, >> 高位补符号位， >>> 高位补0
 	sortProcession(arr, l, mid);
 	sortProcession(arr, mid + 1, r);
 	merge(arr, l, mid, r);
-	
+
 }
 
 void mergeSort(vector<int> &arr) {
