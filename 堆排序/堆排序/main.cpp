@@ -26,6 +26,8 @@ void heapify(vector<int> &arr,int heapsize) {
 
 
 void heapSort(vector<int> &arr) {
+	for (int i = 0; i < arr.size(); i++)
+		heapInsert(arr, i);
 	int heapsize = arr.size();
 	while(heapsize > 0) {
 		swap(arr[--heapsize], arr[0]);
@@ -46,8 +48,7 @@ int main() {
 	for (int i = 0; i < n; i++)
 		arr.push_back(rand() % N);
 	showArr(arr);
-	for (int i = 0; i < n; i++)
-		heapInsert(arr, i);
+	
 	heapSort(arr);
 	showArr(arr);
 }
